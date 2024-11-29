@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForeCast</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./logo_forecast.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <h1>
+                <i class="fas fa-cloud-sun-rain"></i>
+                ForeCast
+            </h1>
+            <form id="query">
+                <input type="text" id="city" placeholder="Enter city name" required>
+                <button type="submit">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </form>
+            <button id="logout">Logout</button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="location-info">
+            <h2 id="formatted_address">Search a location</h2>
+
+            <div class="time-container">
+                <i class="fas fa-clock"></i>
+                <span id="Time">--:--</span>
+            </div>
+        </div>
+
+        <div class="temperature-container">
+            <h1 class="current-temp">
+                <i class="fas fa-thermometer-half"></i>
+                <span id="current_tmp">-- °C</span>
+            </h1>
+            <div class="climate-icon">
+                <i id="climateIcon" class="fas"></i>
+            </div>
+        </div>
+        <div class="climate-info">
+            <div class="sun-times">
+                <p><i class="fa-regular fa-sun"></i> Sunrise: <span id="sunriseTime">--:--</span></p>
+                <p><i class="fa-regular fa-moon"></i> Sunset: <span id="sunsetTime">--:--</span></p>
+            </div>
+        </div>
+
+        <div class="other_info">
+            <div class="info-card">
+                <i class="fas fa-tint"></i>
+                <h3>Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-cloud-rain"></i>
+                <h3>Precipitation</h3>
+                <p id="Precipitation">--%</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-wind"></i>
+                <h3>Wind Speed</h3>
+                <p id="Wind">-- km/h</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
