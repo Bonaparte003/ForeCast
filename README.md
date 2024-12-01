@@ -54,8 +54,21 @@ Python Flask
 
 ### Deployment:
 
-- Nginx (web server software)
-- Haproxy (For Reverse proxying or Loadbalancing)
+- Nginx (web server software):
+
+In the Deployment to NGINX scp command to push codes from
+localhost to the machine has been used.
+After that a new directory was created at /var/www/ namely Forecast
+which was then referenced in the config file at /etc/nginx/sites-available/ForeCast
+in the root /var/www/Forecast, to server it's html file.
+
+After that a symbolic link was created at /etc/nginx/sites-enabled/ named Forecast with the help
+of the ln -s command
+
+- Haproxy (For Reverse proxying or Loadbalancing):
+
+In the Load balancer configuration we used the two servers web01 and web02 to be proxy passed to,
+and also did route hosting so that based on the routes it knows where to pass the requests (because I used a flask app).
 
 ## Web Application Diagram
 ![Functionality](./images/Diagram.png)
